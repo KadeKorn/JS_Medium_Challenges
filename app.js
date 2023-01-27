@@ -54,11 +54,62 @@ function lastElem(arr) {
 // console.log(arrSum([1, 2, 300]));
 
 // Q5
-function ProgressiveSum(num) { // whenever you hear sum you should be thinking of creating a new variable
-    let sum = 0;
-     for (let i = 0; i < num; i++){
-      console.log(i)
-     }
-  }
+// function ProgressiveSum(num) { // whenever you hear sum you should be thinking of creating a new variable
+//     let sum = 0;
+//      for (let i = 1 ; i <= num; i++){ // to get I to start at 1 --> i = 1 and or you can say I <= num
+//       // console.log(i)
+//       sum = sum + i
+//     }
+//     return sum 
+//   }
 
-  console.log(ProgressiveSum(3))
+//   console.log(ProgressiveSum(3))
+
+  //Q 6
+
+  // function calcTime(seconds){
+  //   //inital thoughts. Use Modulo % 60 to get the number of minutes and then the remainder to the seconds
+  //   let timerMinutes = Math.floor(seconds / 60);
+  //   let timerSeconds = seconds % 60;
+    
+  //   if (timerMinutes.toString().length === 1){
+  //     timerMinutes = "0" + timerMinutes
+  //   }
+
+  //   return  timerMinutes + ':' + timerSeconds
+  // }
+
+  // console.log(calcTime(600))
+
+  //Q7
+  // function getMax(arr){
+  //   console.log(arr)
+  //   const max = Math.max(...arr)
+  //   return max
+  // }
+  // console.log(getMax([-300,-100,-200]))
+
+// daves solution he wants a for loop 
+function getMax(arr){
+  let largest = arr[0]
+  for(let i =0; i< arr.length; i++){
+    console.log(arr[i])
+    if(arr[i] > largest){
+      largest = arr[i]
+      }
+    }
+    return largest;
+}
+// console.log(getMax([-500,-200,-300]))
+// //Q8 
+// function reverseString(string){
+//   return string.split('').reverse().join('')
+// }
+// console.log(reverseString('This is Cool'))
+// Need to use a loop
+function reverseString(string){
+  for(let i = 0; i < string.length; i++){
+    console.log(string[i])
+  }
+}
+console.log('abc')
