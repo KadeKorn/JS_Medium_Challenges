@@ -38,23 +38,27 @@ function lastElem(arr) {
 // console.log(lastElem(["dog", "cat", "ball"]));
 
 //Q4
+//davs solution MESS AROUND WITH THIS
 // function arrSum(arr) {
-// for (i=0;i<arr.length;i++){
-//    return arr[i] + arr[i]
-//  }
+//     let sum = 0
+//   for (let i = 0; i < arr.length; i++) { // if you do -1 at the end of length it won't the last index
+//     // this is how you loop through every elem in a array
+//     console.log(arr[i]); // <-- loops the element
+//     console.log("run this code");
+//     sum = sum + arr[i]; // this adds it all together
+//   }
+//   console.log("for loop broke");
+//   return sum;
 // }
 
-//davs solution
-function arrSum(arr) {
-    let sum = 0
-  for (let i = 0; i < arr.length; i++) {
-    // this is how you loop through every elem in a array
-    console.log(arr[i]); // <-- loops the element
-    console.log("run this code");
-    sum = sum + arr[i]
-  }
-  console.log("for loop broke");
-  return sum;
-}
+// console.log(arrSum([1, 2, 300]));
 
-console.log(arrSum([1, 2, 300]));
+// Q5
+function ProgressiveSum(num) { // whenever you hear sum you should be thinking of creating a new variable
+    let sum = 0;
+     for (let i = 0; i < num; i++){
+      console.log(i)
+     }
+  }
+
+  console.log(ProgressiveSum(3))
