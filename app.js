@@ -89,27 +89,65 @@ function lastElem(arr) {
   // }
   // console.log(getMax([-300,-100,-200]))
 
-// daves solution he wants a for loop 
-function getMax(arr){
-  let largest = arr[0]
-  for(let i =0; i< arr.length; i++){
-    console.log(arr[i])
-    if(arr[i] > largest){
-      largest = arr[i]
-      }
-    }
-    return largest;
-}
+// // daves solution he wants a for loop 
+// function getMax(arr){
+//   let largest = arr[0]
+//   for(let i =0; i< arr.length; i++){
+//     console.log(arr[i])
+//     if(arr[i] > largest){
+//       largest = arr[i]
+//       }
+//     }
+//     return largest;
+// }
 // console.log(getMax([-500,-200,-300]))
 // //Q8 
 // function reverseString(string){
 //   return string.split('').reverse().join('')
 // }
 // console.log(reverseString('This is Cool'))
-// Need to use a loop
-function reverseString(string){
-  for(let i = 0; i < string.length; i++){
-    console.log(string[i])
+// Need to use a loop below is davs solution.
+// function reverseString(string){
+//   let reverseStr  = '';
+//   for(let i = 0; i < string.length; i++){
+//     // this is how you loop though every character in a string
+//     reverseStr = string[i] + reverseStr
+//   }
+//   return reverseStr
+// }
+// console.log(reverseString('abc'))
+//Q9 for loop, array 'fill', array 'map'
+function convertToZeros1(arr){
+  return arr.fill(0);
+}
+function convertToZeros2(arr){
+  return arr.map(x => x * 0) // I can make this also a multiple mapping by chaning the 0 to a 2
+}
+
+function convertToZeros3(arr){
+  for(let i = 0; i < arr.length; i++){
+    console.log(arr[i])
+    // this is where I am stuck. I can turn the element into a 0 but I dont know how to return the entire array filled with zeros
   }
 }
-console.log('abc')
+
+console.log(convertToZeros3([1,2,3]))
+// Davs solutions
+function convertToZerosD1(arr){
+  let newArr = [];
+  for(let i = 0; i< arr.length; i++){
+     newArr[i] = 0                      // arr[i] = 0
+  }
+           // return arr;
+}
+
+function convertToZerosD2(arr){
+  return new Array(arr.length).fill(0); // makes a new array and fills it with zeros
+}
+
+function convertToZerosD3(arr){
+
+}
+
+console.log(convertToZerosD2([1,2,3,4,5,6]))
+
