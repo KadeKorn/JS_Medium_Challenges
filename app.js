@@ -60,36 +60,36 @@ function lastElem(arr) {
 //       // console.log(i)
 //       sum = sum + i
 //     }
-//     return sum 
+//     return sum
 //   }
 
 //   console.log(ProgressiveSum(3))
 
-  //Q 6
+//Q 6
 
-  // function calcTime(seconds){
-  //   //inital thoughts. Use Modulo % 60 to get the number of minutes and then the remainder to the seconds
-  //   let timerMinutes = Math.floor(seconds / 60);
-  //   let timerSeconds = seconds % 60;
-    
-  //   if (timerMinutes.toString().length === 1){
-  //     timerMinutes = "0" + timerMinutes
-  //   }
+// function calcTime(seconds){
+//   //inital thoughts. Use Modulo % 60 to get the number of minutes and then the remainder to the seconds
+//   let timerMinutes = Math.floor(seconds / 60);
+//   let timerSeconds = seconds % 60;
 
-  //   return  timerMinutes + ':' + timerSeconds
-  // }
+//   if (timerMinutes.toString().length === 1){
+//     timerMinutes = "0" + timerMinutes
+//   }
 
-  // console.log(calcTime(600))
+//   return  timerMinutes + ':' + timerSeconds
+// }
 
-  //Q7
-  // function getMax(arr){
-  //   console.log(arr)
-  //   const max = Math.max(...arr)
-  //   return max
-  // }
-  // console.log(getMax([-300,-100,-200]))
+// console.log(calcTime(600))
 
-// // daves solution he wants a for loop 
+//Q7
+// function getMax(arr){
+//   console.log(arr)
+//   const max = Math.max(...arr)
+//   return max
+// }
+// console.log(getMax([-300,-100,-200]))
+
+// // daves solution he wants a for loop
 // function getMax(arr){
 //   let largest = arr[0]
 //   for(let i =0; i< arr.length; i++){
@@ -101,7 +101,7 @@ function lastElem(arr) {
 //     return largest;
 // }
 // console.log(getMax([-500,-200,-300]))
-// //Q8 
+// //Q8
 // function reverseString(string){
 //   return string.split('').reverse().join('')
 // }
@@ -117,37 +117,79 @@ function lastElem(arr) {
 // }
 // console.log(reverseString('abc'))
 //Q9 for loop, array 'fill', array 'map'
-function convertToZeros1(arr){
+function convertToZeros1(arr) {
   return arr.fill(0);
 }
-function convertToZeros2(arr){
-  return arr.map(x => x * 0) // I can make this also a multiple mapping by chaning the 0 to a 2
+function convertToZeros2(arr) {
+  return arr.map((elem) => elem * 0); // I can make this also a multiple mapping by chaning the 0 to a 2
 }
 
-function convertToZeros3(arr){
-  for(let i = 0; i < arr.length; i++){
-    console.log(arr[i])
+function convertToZeros3(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
     // this is where I am stuck. I can turn the element into a 0 but I dont know how to return the entire array filled with zeros
   }
 }
 
-console.log(convertToZeros3([1,2,3]))
+console.log(convertToZeros3([1, 2, 3]));
 // Davs solutions
-function convertToZerosD1(arr){
+function convertToZerosD1(arr) {
   let newArr = [];
-  for(let i = 0; i< arr.length; i++){
-     newArr[i] = 0                      // arr[i] = 0
+  for (let i = 0; i < arr.length; i++) {
+    newArr[i] = 0; // arr[i] = 0
   }
-           // return arr;
+  // return arr;
 }
 
-function convertToZerosD2(arr){
+function convertToZerosD2(arr) {
+  // will be used in a future project
   return new Array(arr.length).fill(0); // makes a new array and fills it with zeros
 }
 
-function convertToZerosD3(arr){
-
+function convertToZerosD3(arr) {
+  // Array.map is !!!Important need to know
 }
 
-console.log(convertToZerosD2([1,2,3,4,5,6]))
+console.log(convertToZerosD2([1, 2, 3, 4, 5, 6]));
 
+//Q10
+function removeApples1(arr) {
+  let filtered = arr.filter(
+    (elem) => typeof elem === "string" && elem.length >= 6
+  );
+  return filtered;
+}
+
+function removeApples3(arr){ // this one is better practice than removeApples1
+  return arr.filter( elem => elem !== 'Apple')
+}
+
+
+function removeApples2(arr) {
+  // create new arr and if its a apple dont add it
+  let noApples = [];
+  for (let i = 0; i < arr.length; i++) {
+    // If I wanted to make this more foolproof I would add some code to make all values lowercase (add test to make sure its a string), so that there wouldn't be any lowercase apples in here
+    if (arr[i] !== "Apple") {
+      noApples.push(arr[i]);
+    }
+  }
+  return noApples; // things I messed up on here: 1. how to set up push, 2 keeping noApples array outside of the for loop and returning the array outside of the for loop
+}
+
+// console.log(removeApples3(["Banana", "Orange", "Apple", "Tomato"]));
+
+//Q11
+
+function filterOutFalsy2 (arr) { // how to find out truthy/falsy !! <-- use in console
+  let trueArry = []
+  for(let i = 0; i < arr.length;i++){
+    console.log(arr[i])
+    if(!!arr[i] === true){
+      trueArry.push(arr[i]);
+    }
+  }
+  return trueArry;
+}
+
+console.log(filterOutFalsy2(["Banana", "Orange", "Apple", "Tomato", [],]));
