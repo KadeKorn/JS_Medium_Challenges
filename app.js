@@ -160,10 +160,10 @@ function removeApples1(arr) {
   return filtered;
 }
 
-function removeApples3(arr){ // this one is better practice than removeApples1
-  return arr.filter( elem => elem !== 'Apple')
+function removeApples3(arr) {
+  // this one is better practice than removeApples1
+  return arr.filter((elem) => elem !== "Apple");
 }
-
 
 function removeApples2(arr) {
   // create new arr and if its a apple dont add it
@@ -181,15 +181,43 @@ function removeApples2(arr) {
 
 //Q11
 
-function filterOutFalsy2 (arr) { // how to find out truthy/falsy !! <-- use in console
-  let trueArry = []
-  for(let i = 0; i < arr.length;i++){
-    console.log(arr[i])
-    if(!!arr[i] === true){
-      trueArry.push(arr[i]);
+function filterOutFalsy2_1(arr) {
+  // how to find out truthy/falsy !! <-- use in console
+  let trueArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+    if (!!arr[i] === true) {
+      trueArr.push(arr[i]);
     }
   }
   return trueArry;
 }
 
-console.log(filterOutFalsy2(["Banana", "Orange", "Apple", "Tomato", [],]));
+function filterOutFalsy2_2(arr) {
+  // return arr.filter(Boolean) clever stackoverflow shortcut
+  return arr.filter((elem) => !!elem); // (elem => !!elem === true) 
+}
+
+console.log(
+  filterOutFalsy2_2([null, "Banana", "Orange", "Apple", "Tomato", [], "", null])
+);
+
+//Q12
+
+//first attempt - Whenever you think of convert think of Map
+function convertToBoolean1(arr){
+  let boolArr = [];
+  for(let i = 0; i < arr.length; i++){
+    console.log(arr[i]);
+    if (!!arr[i] === true){
+      boolArr.push(arr[i])
+    }
+  }
+  return boolArr
+}
+
+function convertToBoolean2(arr){
+  return arr.map(elem => !!elem)
+}
+
+console.log(convertToBoolean2([null, "Banana", "Orange", "Apple", "Tomato", [], "", null]))
