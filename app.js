@@ -25,16 +25,16 @@
 // console.log(filterOutFalsy(true,'Dog'))
 
 //Q2
-function arrLength(arr) {
-  return arr.length; // I did arrLength.length before. Remeber that the parameter I am passing in needs to be refrenced not a outside PM
-}
+// function arrLength(arr) {
+//   return arr.length; // I did arrLength.length before. Remeber that the parameter I am passing in needs to be refrenced not a outside PM
+// }
 // console.log(arrLength([]));
 
 //Q3
-function lastElem(arr) {
+// function lastElem(arr) {
   // return arr.splice(-1);
   // return arr[arr.length -1]
-}
+// }
 // console.log(lastElem(["dog", "cat", "ball"]));
 
 //Q4
@@ -131,7 +131,7 @@ function convertToZeros3(arr) {
   }
 }
 
-console.log(convertToZeros3([1, 2, 3]));
+// console.log(convertToZeros3([1, 2, 3]));
 // Davs solutions
 function convertToZerosD1(arr) {
   let newArr = [];
@@ -150,7 +150,7 @@ function convertToZerosD3(arr) {
   // Array.map is !!!Important need to know
 }
 
-console.log(convertToZerosD2([1, 2, 3, 4, 5, 6]));
+// console.log(convertToZerosD2([1, 2, 3, 4, 5, 6]));
 
 //Q10
 function removeApples1(arr) {
@@ -198,9 +198,9 @@ function filterOutFalsy2_2(arr) {
   return arr.filter((elem) => !!elem); // (elem => !!elem === true) 
 }
 
-console.log(
-  filterOutFalsy2_2([null, "Banana", "Orange", "Apple", "Tomato", [], "", null])
-);
+// console.log(
+//   filterOutFalsy2_2([null, "Banana", "Orange", "Apple", "Tomato", [], "", null])
+// );
 
 //Q12
 
@@ -216,8 +216,43 @@ function convertToBoolean1(arr){
   return boolArr
 }
 
+// I was able to do this, but needed Dav to tell me Map. Again when you hear Convert think Map
 function convertToBoolean2(arr){
   return arr.map(elem => !!elem)
 }
 
-console.log(convertToBoolean2([null, "Banana", "Orange", "Apple", "Tomato", [], "", null]))
+// console.log(convertToBoolean2([null, "Banana", "Orange", "Apple", "Tomato", [], "", null]))
+
+// Going through all JS challenges. Just finished Easy now on to here 2/3/23
+//Q1
+function filterOutFalsy(elem1,elem2){
+  return !!elem1 === false ? elem1 : elem2;
+}
+// console.log(filterOutFalsy(false,100))
+//Q2
+function arrLength(arr){
+  return arr.length
+}
+// console.log(arrLength([]))
+//Q3
+function lastElem(arr){
+  return arr[arr.length -1] // arr --> length --> last element
+}
+// console.log(lastElem([1,2,'ball']))
+//Q4
+function arrSum(arr){
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++){
+    sum += arr[i]; // let this loop through
+  }
+    return sum // then return
+} 
+  //  return arr.reduce((a,b) => a + b) // takes two elems of the arr then adds them together. repeat
+// console.log(arrSum([2,3,4]))
+//Q5
+function ProgressiveSum(num){
+  for (let i = 0; i< num;i++){
+    console.log(num[i])
+  }
+}
+console.log(ProgressiveSum(3))
