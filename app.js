@@ -32,8 +32,8 @@
 
 //Q3
 // function lastElem(arr) {
-  // return arr.splice(-1);
-  // return arr[arr.length -1]
+// return arr.splice(-1);
+// return arr[arr.length -1]
 // }
 // console.log(lastElem(["dog", "cat", "ball"]));
 
@@ -67,19 +67,19 @@
 
 //Q 6
 
-// function calcTime(seconds){
-//   //inital thoughts. Use Modulo % 60 to get the number of minutes and then the remainder to the seconds
-//   let timerMinutes = Math.floor(seconds / 60);
-//   let timerSeconds = seconds % 60;
+function calcTime(seconds){
+  //inital thoughts. Use Modulo % 60 to get the number of minutes and then the remainder to the seconds
+  let timerSeconds = seconds % 60;
+  let timerMinutes = Math.floor(seconds / 60);
 
-//   if (timerMinutes.toString().length === 1){
-//     timerMinutes = "0" + timerMinutes
-//   }
+  if (timerMinutes.toString().length === 1){
+    timerMinutes = "0" + timerMinutes
+  }
 
-//   return  timerMinutes + ':' + timerSeconds
-// }
+  return  timerMinutes + ':' + timerSeconds
+}
 
-// console.log(calcTime(600))
+console.log(calcTime(600))
 
 //Q7
 // function getMax(arr){
@@ -195,7 +195,7 @@ function filterOutFalsy2_1(arr) {
 
 function filterOutFalsy2_2(arr) {
   // return arr.filter(Boolean) clever stackoverflow shortcut
-  return arr.filter((elem) => !!elem); // (elem => !!elem === true) 
+  return arr.filter((elem) => !!elem); // (elem => !!elem === true)
 }
 
 // console.log(
@@ -205,54 +205,82 @@ function filterOutFalsy2_2(arr) {
 //Q12
 
 //first attempt - Whenever you think of convert think of Map
-function convertToBoolean1(arr){
+function convertToBoolean1(arr) {
   let boolArr = [];
-  for(let i = 0; i < arr.length; i++){
+  for (let i = 0; i < arr.length; i++) {
     console.log(arr[i]);
-    if (!!arr[i] === true){
-      boolArr.push(arr[i])
+    if (!!arr[i] === true) {
+      boolArr.push(arr[i]);
     }
   }
-  return boolArr
+  return boolArr;
 }
 
 // I was able to do this, but needed Dav to tell me Map. Again when you hear Convert think Map
-function convertToBoolean2(arr){
-  return arr.map(elem => !!elem)
+function convertToBoolean2(arr) {
+  return arr.map((elem) => !!elem);
 }
 
 // console.log(convertToBoolean2([null, "Banana", "Orange", "Apple", "Tomato", [], "", null]))
 
 // Going through all JS challenges. Just finished Easy now on to here 2/3/23
 //Q1
-function filterOutFalsy(elem1,elem2){
+function filterOutFalsy(elem1, elem2) {
   return !!elem1 === false ? elem1 : elem2;
 }
 // console.log(filterOutFalsy(false,100))
 //Q2
-function arrLength(arr){
-  return arr.length
+function arrLength(arr) {
+  return arr.length;
 }
 // console.log(arrLength([]))
 //Q3
-function lastElem(arr){
-  return arr[arr.length -1] // arr --> length --> last element
+function lastElem(arr) {
+  return arr[arr.length - 1]; // arr --> length --> last element
 }
 // console.log(lastElem([1,2,'ball']))
 //Q4
-function arrSum(arr){
+function arrSum(arr) {
   let sum = 0;
-  for (let i = 0; i < arr.length; i++){
+  for (let i = 0; i < arr.length; i++) {
     sum += arr[i]; // let this loop through
   }
-    return sum // then return
-} 
-  //  return arr.reduce((a,b) => a + b) // takes two elems of the arr then adds them together. repeat
+  return sum; // then return
+}
+//  return arr.reduce((a,b) => a + b) // takes two elems of the arr then adds them together. repeat
 // console.log(arrSum([2,3,4]))
 //Q5
-function ProgressiveSum(num){
-  for (let i = 0; i< num;i++){
-    console.log(num[i])
-  }
-}
-console.log(ProgressiveSum(3))
+// function ProgressiveSum(num) {
+//   let sum = 0;
+//   for (let i = 1; i <= num; i++) {
+//     console.log(i);
+//     sum += i;
+//   }
+//   return sum;
+// }
+// console.log(ProgressiveSum(12));
+
+// // doing Q5 again
+
+// function ProgressiveSum(num) {
+//   let sum = 0;
+//   for (let i = 1; i <= num; i++) {
+//    sum += i;    
+//   }
+//   return sum
+// }
+// console.log(ProgressiveSum(600))
+
+//Q6
+function calcTime(num){
+  let timerSeconds = num % 60;
+  let timerMinutes = Math.floor(timerSeconds / 60);
+
+  if (timerMinutes.toString().length === 1){
+        timerMinutes = "0" + timerMinutes
+      }
+    
+      return  timerMinutes + ':' + timerSeconds
+    }
+    
+    console.log(calcTime(66))
