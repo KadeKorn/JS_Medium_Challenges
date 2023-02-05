@@ -67,19 +67,19 @@
 
 //Q 6
 
-function calcTime(seconds){
-  //inital thoughts. Use Modulo % 60 to get the number of minutes and then the remainder to the seconds
-  let timerSeconds = seconds % 60;
-  let timerMinutes = Math.floor(seconds / 60);
+// function calcTime(seconds){
+//   //inital thoughts. Use Modulo % 60 to get the number of minutes and then the remainder to the seconds
+//   let timerSeconds = seconds % 60;
+//   let timerMinutes = Math.floor(seconds / 60);
 
-  if (timerMinutes.toString().length === 1){
-    timerMinutes = "0" + timerMinutes
-  }
+//   if (timerMinutes.toString().length === 1){
+//     timerMinutes = "0" + timerMinutes
+//   }
 
-  return  timerMinutes + ':' + timerSeconds
-}
+//   return  timerMinutes + ':' + timerSeconds
+// }
 
-console.log(calcTime(600))
+// console.log(calcTime(600))
 
 //Q7
 // function getMax(arr){
@@ -272,15 +272,61 @@ function arrSum(arr) {
 // console.log(ProgressiveSum(600))
 
 //Q6
-function calcTime(num){
-  let timerSeconds = num % 60;
-  let timerMinutes = Math.floor(timerSeconds / 60);
-
+function calcTime(seconds){
+  let timerMinutes =  Math.floor(seconds / 60);
+  let timerSeconds = seconds % 60;
   if (timerMinutes.toString().length === 1){
-        timerMinutes = "0" + timerMinutes
-      }
+    timerMinutes = "0" +timerMinutes;
+  }
+  return timerMinutes + ":" + timerSeconds
+}
     
-      return  timerMinutes + ':' + timerSeconds
+console.log(calcTime(1267))
+
+//Q7
+function getMax(arr){ // Easy return Math.max(...arr)
+  let n = -Infinity;
+  for (let i = 0; i < arr.length;i++){
+    // console.log(arr[i])
+    if (arr[i] > n){
+      n = arr[i];
     }
-    
-    console.log(calcTime(66))
+  }
+  return n
+}
+// console.log(getMax([5,100,0]))
+//Q8
+function reverseString1(string){ // decrementing for loop
+  let newStr =""
+  for(let i = string.length -1; i >= 0;i--){
+    // console.log(string[i])
+    newStr += string[i]
+  }
+  return newStr
+}
+
+function reverseString2(str){ // incrementing for loop
+  let newStr = ""
+  for(let i = 0; i < str.length;i++){
+    newStr = str[i] + newStr // by putting the str[i] infront it reversed it
+  }
+  return newStr
+}
+
+function reverseString3(str){ // reverse property
+  return str.split('').reverse().join('')
+}
+// console.log(reverseString3('apple'))
+
+//Q9
+function convertToZerosA(arr){
+  let newArr = []
+  for(let i =0; i < arr.length;i++){
+    console.log(arr[i])
+    if (arr[i] === Number.isInteger){
+      newArr += 0
+    }
+  }
+  return newArr;
+}
+console.log(convertToZerosA([5,100,0]))
