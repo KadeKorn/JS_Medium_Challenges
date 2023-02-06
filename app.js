@@ -265,68 +265,109 @@ function arrSum(arr) {
 // function ProgressiveSum(num) {
 //   let sum = 0;
 //   for (let i = 1; i <= num; i++) {
-//    sum += i;    
+//    sum += i;
 //   }
 //   return sum
 // }
 // console.log(ProgressiveSum(600))
 
 //Q6
-function calcTime(seconds){
-  let timerMinutes =  Math.floor(seconds / 60);
+function calcTime(seconds) {
+  let timerMinutes = Math.floor(seconds / 60);
   let timerSeconds = seconds % 60;
-  if (timerMinutes.toString().length === 1){
-    timerMinutes = "0" +timerMinutes;
+  if (timerMinutes.toString().length === 1) {
+    timerMinutes = "0" + timerMinutes;
   }
-  return timerMinutes + ":" + timerSeconds
+  return timerMinutes + ":" + timerSeconds;
 }
-    
-console.log(calcTime(1267))
+
+// console.log(calcTime(1267))
 
 //Q7
-function getMax(arr){ // Easy return Math.max(...arr)
+function getMax(arr) {
+  // Easy return Math.max(...arr)
   let n = -Infinity;
-  for (let i = 0; i < arr.length;i++){
+  for (let i = 0; i < arr.length; i++) {
     // console.log(arr[i])
-    if (arr[i] > n){
+    if (arr[i] > n) {
       n = arr[i];
     }
   }
-  return n
+  return n;
 }
 // console.log(getMax([5,100,0]))
 //Q8
-function reverseString1(string){ // decrementing for loop
-  let newStr =""
-  for(let i = string.length -1; i >= 0;i--){
+function reverseString1(string) {
+  // decrementing for loop
+  let newStr = "";
+  for (let i = string.length - 1; i >= 0; i--) {
     // console.log(string[i])
-    newStr += string[i]
+    newStr += string[i];
   }
-  return newStr
+  return newStr;
 }
 
-function reverseString2(str){ // incrementing for loop
-  let newStr = ""
-  for(let i = 0; i < str.length;i++){
-    newStr = str[i] + newStr // by putting the str[i] infront it reversed it
+function reverseString2(str) {
+  // incrementing for loop
+  let newStr = "";
+  for (let i = 0; i < str.length; i++) {
+    newStr = str[i] + newStr; // by putting the str[i] infront it reversed it
   }
-  return newStr
+  return newStr;
 }
 
-function reverseString3(str){ // reverse property
-  return str.split('').reverse().join('')
+function reverseString3(str) {
+  // reverse property
+  return str.split("").reverse().join("");
 }
 // console.log(reverseString3('apple'))
 
 //Q9
-function convertToZerosA(arr){
-  let newArr = []
-  for(let i =0; i < arr.length;i++){
-    console.log(arr[i])
-    if (arr[i] === Number.isInteger){
-      newArr += 0
+function convertToZerosA(arr) {
+  // this was all me
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+    if (typeof arr[i] == "number") {
+      newArr = newArr + arr[i] * 0;
     }
+  }
+  const newArr2 = Array.from(String(newArr), Number);
+  return newArr2;
+}
+
+//daves solution
+function convertToZerosAA(arr) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    newArr[i]= 0
   }
   return newArr;
 }
-console.log(convertToZerosA([5,100,0]))
+
+function convertToZerosB(arr) {
+  return new Array(arr.length).fill(0) // this is to make a new array and no matter how long it is it will fill, same length, with zeros. --> my solution // return arr.fill(0);
+}
+
+function convertToZerosC(arr) {
+  return arr.map((elem) => elem * 0); // <-- cleaner would be (elem => 0); "=>" is basically a return
+}
+// console.log(convertToZerosAA([1, 2, 3, 4, 5]));
+
+//Q10
+function removeApplesA(arr){
+  let noApples = []
+  for(let i = 0; i < arr.length; i++){
+    console.log(arr[i])
+    if (arr[i] !== 'Apple'){
+      noApples.push(arr[i])
+    }
+  }
+  return noApples
+}
+
+function removeApplesB(arr){
+  return arr.filter(arr => arr !== 'Apple' )
+}
+
+console.log(removeApplesB(['Banana','Apple', 'Orange', 'Apple','Kiwi','Mango']))
