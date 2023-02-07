@@ -340,13 +340,13 @@ function convertToZerosA(arr) {
 function convertToZerosAA(arr) {
   let newArr = [];
   for (let i = 0; i < arr.length; i++) {
-    newArr[i]= 0
+    newArr[i] = 0;
   }
   return newArr;
 }
 
 function convertToZerosB(arr) {
-  return new Array(arr.length).fill(0) // this is to make a new array and no matter how long it is it will fill, same length, with zeros. --> my solution // return arr.fill(0);
+  return new Array(arr.length).fill(0); // this is to make a new array and no matter how long it is it will fill, same length, with zeros. --> my solution // return arr.fill(0);
 }
 
 function convertToZerosC(arr) {
@@ -355,19 +355,53 @@ function convertToZerosC(arr) {
 // console.log(convertToZerosAA([1, 2, 3, 4, 5]));
 
 //Q10
-function removeApplesA(arr){
-  let noApples = []
-  for(let i = 0; i < arr.length; i++){
-    console.log(arr[i])
-    if (arr[i] !== 'Apple'){
-      noApples.push(arr[i])
+function removeApplesA(arr) {
+  let noApples = [];
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+    if (arr[i] !== "Apple") {
+      noApples.push(arr[i]);
     }
   }
-  return noApples
+  return noApples;
 }
 
-function removeApplesB(arr){
-  return arr.filter(arr => arr !== 'Apple' )
+function removeApplesB(arr) {
+  return arr.filter((elem) => elem !== "Apple");
+}
+// console.log(removeApplesB(['Banana','Apple', 'Orange', 'Apple','Kiwi','Mango']))
+//Q11 I did both problems first attempt. I am very happy with how things are grooving
+
+function filterOutFalsyA(arr) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+    if (!!arr[i] === true) {
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
 }
 
-console.log(removeApplesB(['Banana','Apple', 'Orange', 'Apple','Kiwi','Mango']))
+function filterOutFalsyB(arr) {
+  return arr.filter((elem) => !!elem === true);
+}
+// console.log(filterOutFalsyB(['Banana',"",null, 'Apple', [], undefined, 'Orange', false]))
+
+//Q12
+function convertToBooleanA(arr){
+  return arr.map(elem => !!elem === true)
+}
+
+console.log(
+  convertToBooleanA([
+    "Banana",
+    "",
+    null,
+    "Apple",
+    [],
+    undefined,
+    "Orange",
+    false,
+  ])
+);
